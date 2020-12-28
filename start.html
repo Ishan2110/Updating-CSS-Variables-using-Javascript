@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+        Update CSS Variables with <span class="JS">JS</span>
+    </div>
+
+    <div class="contents">
+        <div id="space" class="text1">
+            <label for="spacing">Spacing:</label>
+            <input type="range" min="10" max="200" value="10" name="spacing" id="spacing" data-sizing="px">
+        </div>
+        <div id="Blur" class="text1">
+            <label for="blur">&nbsp Blur:</label>
+            <input type="range" min="0" max="25" name="blur" value="10" id="blur" data-sizing="px">
+        </div>
+        <div id="Color" class="text1">
+            <label for="base">&nbsp Base Colour</label>
+            <input type="color" id="base" name="base" value="#ffc600">
+        </div>
+    </div>
+
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+    <script>
+        const x = document.querySelectorAll(".contents input");
+        // console.log(x);
+
+        var r = document.querySelector(":root");
+
+        function handle(e) {
+
+            const suffix = this.dataset.sizing || '';
+            // console.log(suffix);
+            // console.log(e);
+            // console.log(this.value);
+
+            // r.style.setProperty("--spacing", this.value + "px")
+
+            console.log(document.documentElement.style);
+
+            document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+
+        }
+
+        x.forEach(key => key.addEventListener("change", handle));
+        x.forEach(key => key.addEventListener("mousemove", handle));
+
+        // console.log(getComputedStyle(r));
+
+        var sty = getComputedStyle(r);
+
+        // console.log("Currently the value is ")
+        // console.log(sty.getPropertyValue("--spacing"));
+    </script>
+
+</body>
+
+</html>

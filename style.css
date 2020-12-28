@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #193549;
+    font-family: 'helvetica neue', sans-serif;
+}
+
+:root {
+    --base: #ffc600;
+    --spacing: 10px;
+    --blur: 1px;
+}
+
+.JS {
+    color: var(--base);
+}
+
+.container {
+    text-align: center;
+    color: white;
+    font-size: 4.5rem;
+    font-weight: bold;
+    margin-top: 3.5rem;
+}
+
+.contents {
+    color: white;
+    font-size: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+
+input[type='color'] {
+    width: 100px;
+}
+
+img {
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    margin: 40px 20%;
+}
